@@ -2,8 +2,8 @@
 # Install virtualenv:
 	`pip3 install virtualenv`
 	`pip3 install virtualenvwrapper`
-	If using windows, install
-		`pip3 install virtualenvwrapper-win`
+If using windows, install
+	`pip3 install virtualenvwrapper-win`
 
 Running `which virtualenvwrapper.sh` should return `/usr/local/bin/virtualenvwrapper.sh`
 
