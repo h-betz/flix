@@ -12,7 +12,6 @@
 img {
     width: 100px;
     height: 100px;
-    grid-row-end: span 3;
 }
 
 .movie-row {
