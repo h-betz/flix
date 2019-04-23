@@ -5,8 +5,6 @@ import { fetchMenuItems, onMenuItemSelect } from '../../actions';
 
 class Menu extends React.Component {
 
-    // state = {choices: []};
-
     componentDidMount() {
         this.props.fetchMenuItems();
     }

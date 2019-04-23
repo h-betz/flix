@@ -19,11 +19,12 @@ class MovieList extends React.Component {
     }
 
     render() {
+        //ui celled definition compact table
         return (
-            <table className="ui celled definition compact table">
+            <table className="ui inverted selectable table">
                 <thead>
                     <tr>
-                        <th className="table-header"></th>
+                        <th></th>
                         <th className="table-header">Title</th>
                         <th className="table-header">IMDB Rating</th>
                         <th className="table-header">Rotten Tomatoes Score</th>

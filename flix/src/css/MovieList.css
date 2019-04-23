@@ -1,14 +1,3 @@
-.movie-list {
-    margin-top: 20px;
-    background-color: black;
-
-}
-
-.table-header {
-    background-color: black !important;
-    color: #0E6EB8 !important;
-}
-
 img {
     width: 100px;
     height: 100px;
@@ -19,11 +8,12 @@ img {
     background-color: black;
 }
 
-.movie-row:hover {
-    box-shadow: rgba(0,0,0,.5);
-    /* opacity: 0.8; */
-    background-color: #303030 !important;
-    /* transition: background-color 50ms; */
+td {
+    color: #0E6EB8;
+}
+
+.ui.inverted.table th {
+    color: #0E6EB8 !important;
 }
 
 div, table, thead {

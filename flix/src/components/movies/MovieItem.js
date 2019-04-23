@@ -31,13 +31,13 @@ class MovieItem extends React.Component {
                     <img ref={this.imageRef} alt={title} src={thumbnail} className="middle aligned"/>
                 </td>
                 <td>
-                    <a class="header">{title}</a>                        
+                    {title}                      
                 </td>
                 <td>
-                    <a class="description">{imdb_rating}</a>                
+                    {imdb_rating}               
                 </td>
                 <td>
-                    <a class="description">{rt_rating}</a> 
+                    {rt_rating}
                 </td>
                 <td>
                     
