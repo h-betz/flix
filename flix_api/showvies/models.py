@@ -9,7 +9,6 @@ class Movie(models.Model):
     description = models.TextField()
     movie_id = models.CharField(max_length=60)
     thumbnail_url = models.TextField()
-    # genres = ArrayField(models.IntegerField(), size=100)
     providers = ArrayField(models.CharField(max_length=50), size=15)
 
 

@@ -26,9 +26,9 @@ class MovieList extends React.Component {
                     <tr>
                         <th></th>
                         <th className="table-header">Title</th>
-                        <th className="table-header">IMDB Rating</th>
-                        <th className="table-header">Rotten Tomatoes Score</th>
-                        <th className="table-header">Other</th>
+                        <th className="table-header">IMDB</th>
+                        <th className="table-header">Rotten Tomatoes</th>
+                        <th className="table-header">Genre</th>
                         <th className="table-header">Providers</th>
                     </tr>
                 </thead>
