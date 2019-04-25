@@ -51,8 +51,12 @@ def handle_aggregator(thread_name, aggregator):
         movie = Movie(**movie_details)
         movie.save()
         for genre in genres:
-            movie_genre = MovieGenre(**{'movie_id': movie.id, 'genre_id': genre})
+            movie_genre = MovieGenre(movie=movie, genre_id=genre)
             movie_genre.save()
+        providers = movie_details.pop('providers')
+        for provider in providers:
+            p = Provider(movie=movie, name=provider)
+            p.save()
 
 
 if __name__ == "__main__":
