@@ -67,7 +67,7 @@ class Aggregator(aggregator.Aggregator):
             'year_end': '2019',
             'year_start': '1900',
         }
-        for i in range(100):
+        for i in range(5):
             params['skip'] = skip
             movie_req = self.get(base_url, params=params)
             skip += 50
