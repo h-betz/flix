@@ -22,13 +22,13 @@ class MovieItem extends React.Component {
     }
 
     render() {
-        const {title, thumbnail, imdb_rating, rt_rating} = this.props.movie;
+        const {title, thumbnail_url, imdb_rating, rt_rating} = this.props.movie;
         let providers = this.props.movie.providers;
         providers = this.formatProviders(providers);
         return (
             <tr className="movie-row">
                 <td width="100px">
-                    <img ref={this.imageRef} alt={title} src={thumbnail} className="middle aligned"/>
+                    <img ref={this.imageRef} alt={title} src={thumbnail_url} className="middle aligned"/>
                 </td>
                 <td>
                     {title}                      

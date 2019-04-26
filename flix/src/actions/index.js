@@ -31,8 +31,14 @@ export const onMenuItemSelect = menuItem => async dispatch => {
 /**
  * This action fetches a list of movies/shows to show on the home page
  */
-export const fetchMovies = () => async dispatch => {
-    const response = await api.get('/fetch');
+export const fetchMovies = (count, skip) => async dispatch => {
+    if (!count) {
+        count = 50;
+    }
+    if (!skip) {
+        skip = 50;
+    }
+    const response = await api.get(`/fetch?count=${count}&skip=${skip}`);
     dispatch({
         type: actionTypes.FETCH_MOVIES,
         payload: response.data

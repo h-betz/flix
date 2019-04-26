@@ -11,6 +11,7 @@ class MovieList extends React.Component {
     }
 
     renderList() {
+        console.log(this.props.movies);
         return this.props.movies.map((movie) => {
             return (
                 <MovieItem movie={movie} onClick={() => this.props.onMovieSelect(movie)} key={movie.id} />

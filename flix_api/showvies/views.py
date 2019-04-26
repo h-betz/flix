@@ -2,16 +2,17 @@ from django.shortcuts import render
 from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
-from aggregation import db_api
+from aggregation import db_api, format_data
 import json
 
 # Create your views here.
 @api_view(['GET', 'POST', 'OPTIONS'])
 @csrf_exempt
-def fetch(request):
-    count = int(request.args.get('count'))
-    skip = int(request.args.get('skip'))
-    movies = db_api.query_by_count(count, skip)
+def fetch(request, count=50, skip=0):
+    if request.GET.get('count'): count = int(request.GET.get('count'))
+    if request.GET.get('skip'): skip = int(request.GET.get('skip'))
+    raw_movies = db_api.query_by_count(count, skip)
+    movies = format_data.format_movie_results(raw_movies)
     # movies = [
     #     {
     #         'id': 1,
