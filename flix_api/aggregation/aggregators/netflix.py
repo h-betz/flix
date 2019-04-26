@@ -19,23 +19,27 @@ class Aggregator(aggregator.Aggregator):
             'x-platform': 'web',
         }
 
-    def parse(self, movie):
-        """
-        Parse our api request response. Extract the data we want
-        :param data: Request response content
-        :return:
-        """
-        thumbnail_url = 'https://img.reelgood.com/content/movie/%s/poster-342.jpg' % movie.get('id')
-        return {
-            'imdb_rating': movie.get('imdb_rating'),
-            'title': movie.get('title'),
-            'description': movie.get('overview'),
-            'rt_rating': movie.get('rt_critics_rating'),
-            'movie_id': movie.get('id'),
-            'genres': movie.get('genres'),
-            'thumbnail_url': thumbnail_url,
-            'provider': self.name,
-        }
+    # def parse(self, media):
+    #     """
+    #     Parse our movie object. Extract the data we want
+    #     :param data: Request response content
+    #     :return:
+    #     """
+    #     thumbnail_url = 'https://img.reelgood.com/content/movie/%s/poster-342.jpg' % media.get('id')
+    #     if media.get('content_type') == 's':
+    #         # This is a show, not a movie
+    #         thumbnail_url = 'https://img.reelgood.com/content/show/%s/poster-342.jpg' % media.get('id')
+    #     return {
+    #         'imdb_rating': media.get('imdb_rating'),
+    #         'title': media.get('title'),
+    #         'description': media.get('overview'),
+    #         'rt_rating': media.get('rt_critics_rating'),
+    #         'movie_id': media.get('id'),
+    #         'genres': media.get('genres'),
+    #         'thumbnail_url': thumbnail_url,
+    #         'provider': self.name,
+    #         'content_type': media.get('content_type'),
+    #     }
 
     def get_data(self):
         """
@@ -66,7 +70,7 @@ class Aggregator(aggregator.Aggregator):
         }
         for i in range(5):
             params['skip'] = skip
-            movie_req = self.get(base_url, params=params)
+            media_req = self.get(base_url, params=params)
             skip += 50
-            for movie in movie_req.json():
-                yield self.parse(movie)
+            for media in media_req.json():
+                yield self.parse(media)

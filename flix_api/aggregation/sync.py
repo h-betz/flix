@@ -1,6 +1,6 @@
 from aggregation.aggregators import netflix, hulu, hbo, amazon_prime, genres
 from aggregation import db_api, format_data
-from showvies.models import *
+from showvies.models import Media, Genre, MediaGenre, Provider
 import _thread
 import json
 
@@ -49,20 +49,20 @@ def handle_aggregator(thread_name, aggregator):
     :return:
     """
     aggregator.aggregate()
-    for movie_details in aggregator.get_data():
-        genres = movie_details.pop('genres')
-        movie = Movie(**movie_details)
-        movie.save()
+    for media_details in aggregator.get_data():
+        genres = media_details.pop('genres')
+        media = Media(**media_details)
+        media.save()
 
         for genre_id in genres:
-            # Update the MovieGenre table with the new relation
+            # Update the MediaGenre table with the new relation
             genre = db_api.get_genre({'genre_id': genre_id})
-            movie_genre = MovieGenre(movie=movie, genre=genre)
+            movie_genre = MediaGenre(media=media, genre=genre)
             movie_genre.save()
 
         # Update provider table with this new relation
-        provider = movie_details.pop('provider')
-        p = Provider(movie=movie, name=provider)
+        provider = media_details.pop('provider')
+        p = Provider(media=media, name=provider)
         p.save()
 
 

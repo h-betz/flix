@@ -6,6 +6,10 @@ import re
 class Aggregator(aggregator.Aggregator):
 
     def get_genres(self):
+        """
+        Get the list of available genres
+        :return:
+        """
         home_page = self.get('https://reelgood.com/', headers={
             'authority': 'reelgood.com',
             'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.103 Safari/537.36',

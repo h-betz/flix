@@ -1,21 +1,21 @@
 from decimal import Decimal
 
-def format_movie_results(raw_movies):
+def format_media_results(raw_media):
     """
     Format the raw sql query result to a list of python dicts
     :param raw_movies:
     :return:
     """
-    movies = []
-    for movie in raw_movies:
-        movies.append({
-            'id': movie[0],
-            'title': movie[1],
-            'imdb_rating': float(movie[2]),
-            'rt_rating': movie[3],
-            'description': movie[4],
-            'movie_id': movie[5],
-            'thumbnail_url': movie[6],
+    content = []
+    for media in raw_media:
+        content.append({
+            'id': media[0],
+            'title': media[1],
+            'imdb_rating': float(media[2]),
+            'rt_rating': media[3],
+            'description': media[4],
+            'movie_id': media[5],
+            'thumbnail_url': media[6],
             'providers': []
         })
-    return movies
+    return content
