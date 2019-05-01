@@ -34,7 +34,7 @@ class Genre(models.Model):
 
 
 class MediaGenre(models.Model):
-    movie = models.ForeignKey(Media, on_delete=models.CASCADE)
+    media = models.ForeignKey(Media, on_delete=models.CASCADE)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
 
 

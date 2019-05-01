@@ -37,7 +37,8 @@ def query_by_title(title):
 	Query movie table by title
 	"""
 	with connection.cursor() as cursor:
-		query = 'SELECT genre_id FROM showvies_media WHERE name == %s;'
+		title = '%' + title + '%'
+		query = "SELECT * FROM showvies_media WHERE title LIKE %s;"
 		cursor.execute(query, (title,))
 		return cursor.fetchall()
 

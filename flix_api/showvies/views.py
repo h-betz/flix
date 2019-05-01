@@ -12,7 +12,7 @@ def fetch(request, count=50, skip=0):
     if request.GET.get('count'): count = int(request.GET.get('count'))
     if request.GET.get('skip'): skip = int(request.GET.get('skip'))
     raw_media = db_api.query_by_count(count, skip)
-    media = format_data.format_movie_results(raw_media)
+    media = format_data.format_media_results(raw_media)
     return Response(media)
 
 
@@ -23,5 +23,10 @@ def search(request):
     json_data = json.loads(data)
     title = json_data.get('title')
     provider = json_data.get('provider')
-    response = {'success': True}
-    return Response(response)
+    results = []
+    if title and provider:
+        pass
+    elif title:
+        raw_results = db_api.query_by_title(title)
+        results = format_data.format_media_results(raw_results)
+    return Response(results)
