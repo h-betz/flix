@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { searchMovies } from '../../actions';
 
 class SearchForm extends React.Component {
 

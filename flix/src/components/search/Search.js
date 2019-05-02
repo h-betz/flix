@@ -4,8 +4,8 @@ import { searchMovies } from '../../actions';
 import SearchForm from './SearchForm';
 
 class Search extends React.Component {
+
     onSubmit = formValues => {
-        console.log(formValues);
         this.props.searchMovies(formValues);
     }
 

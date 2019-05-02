@@ -6,12 +6,7 @@ import { onMovieSelect, fetchMovies } from '../../actions';
 
 class MovieList extends React.Component {
 
-    componentDidMount() {
-        this.props.fetchMovies();
-    }
-
     renderList() {
-        console.log(this.props.movies);
         return this.props.movies.map((movie) => {
             return (
                 <MovieItem movie={movie} onClick={() => this.props.onMovieSelect(movie)} key={movie.id} />
@@ -42,10 +37,4 @@ class MovieList extends React.Component {
 
 }
 
-const mapStateToProps = state => {
-    return {
-        movies: Object.values(state.movies),
-    };
-};
-
-export default connect(mapStateToProps, {onMovieSelect, fetchMovies})(MovieList);
+export default connect(null, {onMovieSelect})(MovieList)
