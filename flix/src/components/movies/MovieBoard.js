@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Search from '../search/Search';
-import MovieList from './MovieList';
+import '../../css/MovieList.css';
 import MovieItem from './MovieItem';
 import SearchForm from '../search/SearchForm'
 import { onMovieSelect, fetchMovies, searchMovies } from '../../actions';
