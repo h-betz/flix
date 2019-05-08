@@ -50,3 +50,10 @@ def get_genre(fields):
 	:return:
 	"""
 	return Genre.objects.filter(**fields)[0]
+
+
+def get_generes():
+	"""
+	Return all Genre items in our database
+	"""
+	return Genre.objects.all()

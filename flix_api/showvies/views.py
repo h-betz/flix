@@ -30,3 +30,11 @@ def search(request):
         raw_results = db_api.query_by_title(title)
         results = format_data.format_media_results(raw_results)
     return Response(results)
+
+
+@api_view(['GET', 'OPTIONS'])
+@csrf_exempt
+def genres(request):
+    raw_genres = db_api.get_generes()
+    genres = format_data.format_genre_results(raw_genres)
+    return Response(genres)

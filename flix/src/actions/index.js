@@ -3,32 +3,6 @@ import * as actionTypes from './types';
 import api from '../api/api';
 
 /**
- * This action fetches the menu choices
- */
-export const fetchMenuItems = () => async dispatch => {
-    const response = await api.get('/menu');
-    dispatch({
-        type: actionTypes.FETCH_MENU_ITEMS,
-        payload: response.data
-    });
-};
-
-/**
- * This action fetches the data assoicated with the menu option choice.
- * This might be better off as a get request
- * @param {menu item selection} menuItem 
- */
-export const onMenuItemSelect = menuItem => async dispatch => {
-    const response = await api.post('/menu', {
-        'choice': menuItem
-    });
-    dispatch({
-        type: actionTypes.FETCH_MENU_ITEM,
-        payload: response.data
-    });
-};
-
-/**
  * This action fetches a list of movies/shows to show on the home page
  */
 export const fetchMovies = (count, skip) => async dispatch => {
@@ -41,6 +15,17 @@ export const fetchMovies = (count, skip) => async dispatch => {
     const response = await api.get(`/fetch?count=${count}&skip=${skip}`);
     dispatch({
         type: actionTypes.FETCH_MOVIES,
+        payload: response.data
+    });
+};
+
+/**
+ * Fetch a list of all available genres
+ */
+export const fetchGenres = () => async dispatch => {
+    const response = api.get('/genres');
+    dispatch({
+        type: actionTypes.FETCH_GENRES,
         payload: response.data
     });
 };

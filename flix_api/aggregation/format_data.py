@@ -19,3 +19,18 @@ def format_media_results(raw_media):
             'providers': []
         })
     return content
+
+
+def format_genre_results(raw_genres):
+    """
+    Format the raw sql query result to a list of python dicts
+    :param raw_genres: List of genre objects from our query results
+    :return: List of dicts with each item corresponding to a genre
+    """
+    genres = []
+    for genre in raw_genres:
+        genres.append({
+            'id': genre.genre_id,
+            'name': genre.name,
+        })
+    return genres

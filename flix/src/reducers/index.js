@@ -5,4 +5,5 @@ import MovieReducer from './MovieReducer';
 export default combineReducers ({
     form: formReducer,
     movies: MovieReducer,
+    genres: MovieReducer,
 });

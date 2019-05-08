@@ -35,15 +35,22 @@ class SearchForm extends React.Component {
         const className = `field ${meta.error && meta.touched ? 'error' : ''}`;
         const checkboxStyle = {
             color: 'white',
-            padding: 10,
         };
         return (
-            <label className="field" style={checkboxStyle}>
+            <label className="field" >
                 <input {...input} type="checkbox" />
-                {label}
+                <label style={checkboxStyle}>{label}</label>
                 {this.renderError(meta)}
             </label>
         );
+    }
+
+    renderGenres() {
+        return this.props.genres.map((genre) => {
+            return (
+                <option value={genre.id} className="text">{genre.name}</option>
+            );
+        });
     }
 
     onSubmit = formValues => {
@@ -71,11 +78,12 @@ class SearchForm extends React.Component {
                     <label style={{color: "white"}}>Genre</label>
                         <Field name="genre" component="select" label="genre">
                             <option value="" className="text">Select One</option>
-                            <option value="Action" className="text">Action</option>
+                            {this.renderGenres()}
+                            {/* <option value="Action" className="text">Action</option>
                             <option value="Adventure" className="text">Adventure</option>
                             <option value="Comedy" className="text">Comedy</option>
                             <option value="Drama" className="text">Drama</option>
-                            <option value="Horror" className="text">Horror</option>
+                            <option value="Horror" className="text">Horror</option> */}
                         </Field>
                 </div>
                 <div className="field" style={{marginLeft: '10px'}}>

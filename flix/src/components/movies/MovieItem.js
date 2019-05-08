@@ -15,6 +15,9 @@ class MovieItem extends React.Component {
 
     formatProviders(providers) {
         let providerString = "";
+        if (!providers) {
+            return providerString;
+        }
         providers.forEach(function (provider) {
             providerString += provider + ", ";
         })
