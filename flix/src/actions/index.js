@@ -13,6 +13,7 @@ export const fetchMovies = (count, skip) => async dispatch => {
         skip = 50;
     }
     const response = await api.get(`/fetch?count=${count}&skip=${skip}`);
+    console.log('Fetch movies');
     dispatch({
         type: actionTypes.FETCH_MOVIES,
         payload: response.data
@@ -23,7 +24,8 @@ export const fetchMovies = (count, skip) => async dispatch => {
  * Fetch a list of all available genres
  */
 export const fetchGenres = () => async dispatch => {
-    const response = api.get('/genres');
+    const response = await api.get('/genres');
+    console.log('Fetch genres');
     dispatch({
         type: actionTypes.FETCH_GENRES,
         payload: response.data

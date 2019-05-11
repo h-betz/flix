@@ -7,27 +7,39 @@ import { onMovieSelect, fetchMovies, searchMovies, fetchGenres } from '../../act
 
 class MovieBoard extends React.Component {
 
+    /**
+     * Fetch our data when the component has loaded
+     */
     componentDidMount() {
         this.props.fetchMovies();
         this.props.fetchGenres();
     }
 
+    /**
+     * Handle form submission
+     */
     onSubmit = formValues => {
         this.props.searchMovies(formValues);
     }
 
+    /**
+     * Render the table rows for the movie items
+     */
     renderList() {
         let media = this.props.movies;
         if (!media || media.length === 0) {
-            return <div></div>;
+            return <tr></tr>;
         }
-        return this.props.movies[0].map((movie) => {
+        return this.props.movies.map((movie) => {
             return (
                 <MovieItem movie={movie} onClick={() => this.props.onMovieSelect(movie)} key={movie.id} />
             );
         });
     }
 
+    /**
+     * Render our main dashboard component
+     */
     render() {
         return (
             <div style={{marginTop: '10px'}}>
