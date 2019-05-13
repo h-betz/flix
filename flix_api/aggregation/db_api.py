@@ -7,7 +7,14 @@ def query_by_count(count=50, skip=0):
 	Query movie table by count
 	"""
 	with connection.cursor() as cursor:
-		query = 'SELECT * FROM showvies_media LIMIT %s OFFSET %s;'
+		# query = 'SELECT * FROM showvies_media LIMIT %s OFFSET %s;'
+		query = "SELECT m.*, g.name as genre\
+					FROM showvies_media as m\
+					INNER JOIN showvies_mediagenre as mg\
+					ON m.id = mg.media_id\
+					INNER JOIN showvies_genre as g\
+					ON g.genre_id = mg.genre_id\
+					LIMIT %s OFFSET %s;"
 		cursor.execute(query, (count, skip))
 		return cursor.fetchall()
 
@@ -27,7 +34,7 @@ def query_by_genre(genre):
 	Query movie table by genre name
 	"""
 	with connection.cursor() as cursor:
-		query = 'SELECT * from showvies_media WHERE id IN (SELECT movie_id FROM showvies_mediagenre WHERE genre_id IN (SELECT genre_id FROM showvies_genre WHERE name = %s));'
+		query = 'SELECT * from showvies_media WHERE id IN (SELECT media_id FROM showvies_mediagenre WHERE genre_id IN (SELECT genre_id FROM showvies_genre WHERE name = %s));'
 		cursor.execute(query, (genre,))
 		return cursor.fetchall()
 

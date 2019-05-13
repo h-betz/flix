@@ -6,19 +6,24 @@ def format_media_results(raw_media):
     :param raw_movies:
     :return:
     """
-    content = []
+    content = {}
     for media in raw_media:
-        content.append({
-            'id': media[0],
-            'title': media[1],
-            'imdb_rating': float(media[2]),
-            'rt_rating': media[3],
-            'description': media[4],
-            'movie_id': media[5],
-            'thumbnail_url': media[6],
-            'providers': []
-        })
-    return content
+        media_id = media[0]
+        if media_id in content:
+            content[media_id]['genres'].append(media[8])
+        else:
+            content[media_id] = {
+                'id': media[0],
+                'title': media[1],
+                'imdb_rating': float(media[2]),
+                'rt_rating': media[3],
+                'description': media[4],
+                'movie_id': media[5],
+                'thumbnail_url': media[6],
+                'genres': [media[8]],
+                'providers': []
+            }
+    return content.values()
 
 
 def format_genre_results(raw_genres):
