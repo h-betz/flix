@@ -7,14 +7,13 @@ def query_by_count(count=50, skip=0):
 	Query movie table by count
 	"""
 	with connection.cursor() as cursor:
-		# query = 'SELECT * FROM showvies_media LIMIT %s OFFSET %s;'
-		query = "SELECT m.*, g.name as genre\
-					FROM showvies_media as m\
-					INNER JOIN showvies_mediagenre as mg\
-					ON m.id = mg.media_id\
-					INNER JOIN showvies_genre as g\
-					ON g.genre_id = mg.genre_id\
-					LIMIT %s OFFSET %s;"
+		query = "	SELECT x.* FROM (SELECT t.*, g.name as genre, p.name\
+					FROM showvies_mediagenre as mg\
+					INNER JOIN showvies_genre as g ON\
+					mg.genre_id = g.genre_id\
+					INNER JOIN showvies_provider as p\
+					ON p.media_id = mg.media_id\
+					INNER JOIN (SELECT * FROM showvies_media LIMIT %s OFFSET %s) t ON t.id = mg.media_id) x;"
 		cursor.execute(query, (count, skip))
 		return cursor.fetchall()
 

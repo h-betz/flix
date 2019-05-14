@@ -11,7 +11,10 @@ def format_media_results(raw_media):
         media_id = media[0]
         if media_id in content:
             content[media_id]['genres'].append(media[8])
+            content[media_id]['providers'].add(media[9])
         else:
+            providers = set()
+            providers.add(media[9])
             content[media_id] = {
                 'id': media[0],
                 'title': media[1],
@@ -21,7 +24,7 @@ def format_media_results(raw_media):
                 'movie_id': media[5],
                 'thumbnail_url': media[6],
                 'genres': [media[8]],
-                'providers': []
+                'providers': providers,
             }
     return content.values()
 

@@ -5,7 +5,7 @@ class MovieItem extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {spans: 0};
+        // this.state = {spans: 0};
         this.imageRef = React.createRef();
     }
 
@@ -13,6 +13,10 @@ class MovieItem extends React.Component {
         this.imageRef.current.addEventListener('load', this.setSpans);
     }
 
+    /**
+     * Takes a list of provider strings and converts it to a comma separated string
+     * @param {List of providers for this show or movie} providers 
+     */
     formatProviders(providers) {
         let providerString = "";
         if (!providers) {
@@ -24,10 +28,25 @@ class MovieItem extends React.Component {
         return providerString.slice(0, -2);
     }
 
+    /**
+     * Formats the list of genre strings into one comma separated string
+     * @param {List of strings} genres 
+     */
+    formatGenres(genres) {
+        let genreString = "";
+        if (!genres) {
+            return genreString;
+        }
+        genres.forEach(function (genre) {
+            genreString += genre + ", ";
+        });
+        return genreString.slice(0, -2);
+    }
+
     render() {
         const {title, thumbnail_url, imdb_rating, rt_rating} = this.props.movie;
-        let providers = this.props.movie.providers;
-        providers = this.formatProviders(providers);
+        let providers = this.formatProviders(this.props.movie.providers);
+        let genres = this.formatGenres(this.props.movie.genres);
         return (
             <tr className="movie-row">
                 <td width="100px">
@@ -43,7 +62,7 @@ class MovieItem extends React.Component {
                     {rt_rating}
                 </td>
                 <td>
-                    
+                    {genres}
                 </td>
                 <td>
                     {providers}
