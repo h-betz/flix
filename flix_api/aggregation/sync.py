@@ -1,7 +1,7 @@
 from aggregation.aggregators import netflix, hulu, hbo, amazon_prime, genres
 from aggregation import db_api, format_data
 from showvies.models import Media, Genre, MediaGenre, Provider
-import _thread
+from threading import Thread
 import json
 
 
@@ -16,18 +16,6 @@ def sync_genres():
         genre.save()
 
 
-def sync():
-    """
-    Perform requests and operations necessary to initialize the database
-    :return:
-    """
-    print("Getting genres.")
-    sync_genres()
-    print("Getting movies.")
-    aggregate()
-    print("Finished")
-
-
 def aggregate():
     """
     Start aggregation processes for all of our aggregators
@@ -35,10 +23,16 @@ def aggregate():
     """
     # aggregators = [netflix, hbo, hulu, amazon_prime]
     aggregators = [netflix]
+    threads = []
     for aggregator in aggregators:
         agg = aggregator.Aggregator()
         print(agg.name)
-        _thread.start_new_thread(handle_aggregator, (agg.name, agg))
+        t = Thread(target=handle_aggregator, args=(agg.name, agg))
+        t.start()
+        threads.append(t)
+
+    for t in threads:
+        t.join()
 
 
 def handle_aggregator(thread_name, aggregator):
@@ -65,6 +59,17 @@ def handle_aggregator(thread_name, aggregator):
         p = Provider(media=media, name=provider)
         p.save()
 
+
+def sync():
+    """
+    Perform requests and operations necessary to initialize the database
+    :return:
+    """
+    print("Getting genres.")
+    sync_genres()
+    print("Getting movies.")
+    aggregate()
+    print("Finished")
 
 if __name__ == "__main__":
     aggregate()

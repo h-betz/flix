@@ -4,6 +4,7 @@ class Aggregator(requests.Session):
 
     def __init__(self):
         super().__init__()
+        self.name = ''
 
     def aggregate(self):
         pass

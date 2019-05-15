@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5102b829-73d1-447c-9478-a3b4361bebdd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aggregation/aggregators/aggregator.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/aggregators/aggregator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/aggregators/amazon_prime.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/aggregators/amazon_prime.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/aggregators/genres.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/aggregators/genres.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/aggregators/hbo.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/aggregators/hbo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/aggregators/hulu.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/aggregators/hulu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/aggregators/netflix.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/aggregators/netflix.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/db_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aggregation/format_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/format_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aggregation/sync.py" beforeDir="false" afterPath="$PROJECT_DIR$/aggregation/sync.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showvies/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/showvies/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/showvies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/showvies/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +17,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aggregation/aggregators/amazon_prime.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
+            <state relative-caret-position="225">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -34,10 +26,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aggregation/aggregators/hbo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="105">
               <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -49,8 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aggregation/db_api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+            <state relative-caret-position="30">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -58,11 +50,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aggregation/sync.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+            <state relative-caret-position="283">
+              <caret line="30" column="70" lean-forward="true" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#76#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +65,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/showvies/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
+            <state relative-caret-position="615">
               <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
             </state>
           </provider>
@@ -79,7 +74,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aggregation/aggregators/netflix.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
+            <state relative-caret-position="630">
               <caret line="43" selection-start-line="43" selection-end-line="75" selection-end-column="39" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -91,7 +86,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aggregation/aggregators/hulu.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="89">
+            <state relative-caret-position="75">
               <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="26" />
               <folding>
                 <element signature="e#0#46#0" expanded="true" />
@@ -117,7 +112,6 @@
         <option value="$PROJECT_DIR$/aggregation/data.py" />
         <option value="$PROJECT_DIR$/showvies/models.py" />
         <option value="$PROJECT_DIR$/aggregation/db_api.py" />
-        <option value="$PROJECT_DIR$/aggregation/sync.py" />
         <option value="$PROJECT_DIR$/showvies/views.py" />
         <option value="$PROJECT_DIR$/aggregation/format_data.py" />
         <option value="$PROJECT_DIR$/aggregation/aggregators/netflix.py" />
@@ -126,6 +120,7 @@
         <option value="$PROJECT_DIR$/aggregation/aggregators/hulu.py" />
         <option value="$PROJECT_DIR$/aggregation/aggregators/hbo.py" />
         <option value="$PROJECT_DIR$/aggregation/aggregators/amazon_prime.py" />
+        <option value="$PROJECT_DIR$/aggregation/sync.py" />
       </list>
     </option>
   </component>
@@ -136,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="797" />
@@ -166,27 +161,6 @@
               <item name="aggregation" type="462c0819:PsiDirectoryNode" />
               <item name="aggregators" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="flix_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flix_api" type="462c0819:PsiDirectoryNode" />
-              <item name="flix_api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flix_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flix_api" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flix_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flix_api" type="462c0819:PsiDirectoryNode" />
-              <item name="showvies" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flix_api" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flix_api" type="462c0819:PsiDirectoryNode" />
-              <item name="showvies" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -195,7 +169,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -251,10 +225,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="797" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -265,9 +239,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.32907802" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -328,20 +302,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/showvies/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggregation/sync.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aggregation/aggregators/genres.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -352,9 +312,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/aggregation/aggregators/amazon_prime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aggregation/aggregators/hbo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aggregation/db_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/showvies/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="9" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/aggregation/aggregators/netflix.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
+        <state relative-caret-position="630">
           <caret line="43" selection-start-line="43" selection-end-line="75" selection-end-column="39" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
@@ -364,7 +361,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aggregation/aggregators/hulu.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="89">
+        <state relative-caret-position="75">
           <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="26" />
           <folding>
             <element signature="e#0#46#0" expanded="true" />
@@ -372,32 +369,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aggregation/aggregators/amazon_prime.py">
+    <entry file="file://$PROJECT_DIR$/aggregation/sync.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="283">
+          <caret line="30" column="70" lean-forward="true" selection-start-line="30" selection-start-column="70" selection-end-line="30" selection-end-column="70" />
           <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggregation/db_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aggregation/aggregators/hbo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#0#76#0" expanded="true" />
           </folding>
         </state>
       </provider>
