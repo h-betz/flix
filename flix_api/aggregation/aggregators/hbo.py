@@ -15,7 +15,6 @@ class Aggregator(aggregator.Aggregator):
             'x-platform': 'web',
         }
 
-
     def get_data(self):
         """
         Perform the requests to retrieve the content available on hbo.

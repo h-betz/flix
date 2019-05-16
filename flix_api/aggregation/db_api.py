@@ -44,7 +44,13 @@ def query_by_title(title):
 	"""
 	with connection.cursor() as cursor:
 		title = '%' + title + '%'
-		query = "SELECT * FROM showvies_media WHERE title LIKE %s;"
+		query = "	SELECT x.* FROM (SELECT t.*, g.name as genre, p.name\
+					FROM showvies_mediagenre as mg\
+					INNER JOIN showvies_genre as g ON\
+					mg.genre_id = g.genre_id\
+					INNER JOIN showvies_provider as p\
+					ON p.media_id = mg.media_id\
+					INNER JOIN (SELECT * FROM showvies_media WHERE title LIKE %s) t ON t.id = mg.media_id) x;"
 		cursor.execute(query, (title,))
 		return cursor.fetchall()
 

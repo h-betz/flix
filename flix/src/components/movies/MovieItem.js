@@ -48,7 +48,7 @@ class MovieItem extends React.Component {
         let providers = this.formatProviders(this.props.movie.providers);
         let genres = this.formatGenres(this.props.movie.genres);
         return (
-            <tr className="movie-row">
+            <tr className="movie-row" onClick={this.props.onClick}>
                 <td width="100px">
                     <img ref={this.imageRef} alt={title} src={thumbnail_url} className="middle aligned"/>
                 </td>

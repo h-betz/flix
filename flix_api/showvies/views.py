@@ -25,6 +25,7 @@ def search(request):
     provider = json_data.get('provider')
     results = []
     if title and provider:
+        # TODO add support
         pass
     elif title:
         raw_results = db_api.query_by_title(title)
@@ -38,3 +39,10 @@ def genres(request):
     raw_genres = db_api.get_generes()
     genres = format_data.format_genre_results(raw_genres)
     return Response(genres)
+
+
+@api_view(['POST', 'OPTIONS'])
+@csrf_exempt
+def flix(request):
+    result = {}
+    return Response(result)

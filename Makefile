@@ -13,3 +13,4 @@ clean-build:
 run:
 	python manage.py sync
 	python manage.py runserver
+	npm start
