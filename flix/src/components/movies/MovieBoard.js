@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../../css/MovieList.css';
 import MovieItem from './MovieItem';
+import MoviePage from './MoviePage';
 import SearchForm from '../search/SearchForm'
 import { onMovieSelect, fetchMovies, searchMovies, fetchGenres } from '../../actions';
 
@@ -20,6 +21,12 @@ class MovieBoard extends React.Component {
      */
     onSubmit = formValues => {
         this.props.searchMovies(formValues);
+    }
+
+    onClick = movie => {
+        return (
+            <MoviePage movie={movie} />
+        )
     }
 
     /**

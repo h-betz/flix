@@ -4,7 +4,12 @@ class MoviePage extends React.Component {
 
 
     render() {
-        return <div>MoviePage</div>;
+        let title = this.props.movie.title;
+        return (
+            <div>
+                <h1>{title}</h1>
+            </div>
+        );
     }
 }
 
