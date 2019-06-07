@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { onMovieSelect } from '../../actions';
 
 class MovieItem extends React.Component {
@@ -48,12 +49,16 @@ class MovieItem extends React.Component {
         let providers = this.formatProviders(this.props.movie.providers);
         let genres = this.formatGenres(this.props.movie.genres);
         return (
-            <tr className="movie-row" onClick={this.props.onClick}>
-                <td width="100px">
-                    <img ref={this.imageRef} alt={title} src={thumbnail_url} className="middle aligned"/>
-                </td>
+            <tr className="movie-row" >
+                <Link to={`/flix/${this.props.movie.id}`}>
+                    <td>
+                        <img ref={this.imageRef} alt={title} src={thumbnail_url} className="middle aligned" width="51px" height="76px"/>
+                    </td>
+                </Link>
                 <td>
-                    {title}                      
+                    <Link to={`/flix/${this.props.movie.id}`}>
+                        {title}
+                    </Link>
                 </td>
                 <td>
                     {imdb_rating}               

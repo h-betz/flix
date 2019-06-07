@@ -17,12 +17,22 @@ class MovieBoard extends React.Component {
     }
 
     /**
+     * Reload the movies
+     */
+    reloadMovies() {
+        this.props.fetchMovies();
+    }
+
+    /**
      * Handle form submission
      */
     onSubmit = formValues => {
         this.props.searchMovies(formValues);
     }
 
+    /**
+     * Go to movie details page for the selected movie
+     */
     onClick = movie => {
         return (
             <MoviePage movie={movie} />
@@ -39,7 +49,7 @@ class MovieBoard extends React.Component {
         }
         return this.props.movies.map((movie) => {
             return (
-                <MovieItem movie={movie} onClick={() => this.props.onMovieSelect(movie)} key={movie.id} />
+                <MovieItem movie={movie} onClick={() => this.props.onMovieSelect(movie.id)} key={movie.id} />
             );
         });
     }
@@ -50,8 +60,8 @@ class MovieBoard extends React.Component {
     render() {
         return (
             <div style={{marginTop: '10px'}}>
-                <div className="ui middle aligned center aligned grid" style={{marginTop: '10px'}}>
-                    <h1 style={{color: "white"}}>Showvies</h1>
+                <div className="ui middle aligned center aligned grid" style={{marginTop: '10px'}} onClick={() => this.reloadMovies()}>
+                    <h1 style={{color: "white"}} >Showvies</h1>
                 </div>
                 <div className="ui middle aligned center aligned grid">
                     <div>

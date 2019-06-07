@@ -33,7 +33,16 @@ def query_by_genre(genre):
 	Query movie table by genre name
 	"""
 	with connection.cursor() as cursor:
-		query = 'SELECT * from showvies_media WHERE id IN (SELECT media_id FROM showvies_mediagenre WHERE genre_id IN (SELECT genre_id FROM showvies_genre WHERE name = %s));'
+		query = '	SELECT * from showvies_media\
+					WHERE id IN (\
+						SELECT media_id \
+						FROM showvies_mediagenre\
+						WHERE genre_id IN (\
+							SELECT genre_id\
+							FROM showvies_genre\
+							WHERE name = %s\
+						)\
+					);'
 		cursor.execute(query, (genre,))
 		return cursor.fetchall()
 
@@ -52,6 +61,19 @@ def query_by_title(title):
 					ON p.media_id = mg.media_id\
 					INNER JOIN (SELECT * FROM showvies_media WHERE title LIKE %s) t ON t.id = mg.media_id) x;"
 		cursor.execute(query, (title,))
+		return cursor.fetchall()
+
+
+def query_by_id(media_id):
+	with connection.cursor() as cursor:
+		query = "	SELECT x.* FROM (SELECT t.*, g.name as genre, p.name\
+					FROM showvies_mediagenre as mg\
+					INNER JOIN showvies_genre as g ON\
+					mg.genre_id = g.genre_id\
+					INNER JOIN showvies_provider as p\
+					ON p.media_id = mg.media_id\
+					INNER JOIN (SELECT * FROM showvies_media WHERE id = %s) t ON t.id = mg.media_id) x;"
+		cursor.execute(query, (str(media_id),))
 		return cursor.fetchall()
 
 

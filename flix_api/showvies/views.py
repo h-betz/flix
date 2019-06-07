@@ -44,5 +44,11 @@ def genres(request):
 @api_view(['POST', 'OPTIONS'])
 @csrf_exempt
 def flix(request):
-    result = {}
+    data = request.body.decode("utf-8")
+    json_data = json.loads(data)
+    media_id = json_data.get('id')
+    raw_result = db_api.query_by_id(media_id)
+    if not raw_result:
+        return Response({})
+    result = format_data.format_media_results(raw_result)
     return Response(result)

@@ -10,7 +10,7 @@ export const fetchMovies = (count, skip) => async dispatch => {
         count = 50;
     }
     if (!skip) {
-        skip = 50;
+        skip = 0;
     }
     const response = await api.get(`/fetch?count=${count}&skip=${skip}`);
     console.log('Fetch movies');
@@ -38,7 +38,7 @@ export const fetchGenres = () => async dispatch => {
  * @param {the movie id} movie 
  */
 export const onMovieSelect = movie => async dispatch => {
-    const response = await api.post('/flick', {
+    const response = await api.post('/flix', {
         'id': movie
     });
     dispatch({
