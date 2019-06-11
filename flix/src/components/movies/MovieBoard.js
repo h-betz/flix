@@ -61,7 +61,7 @@ class MovieBoard extends React.Component {
         return (
             <div style={{marginTop: '10px'}}>
                 <div className="ui middle aligned center aligned grid" style={{marginTop: '10px'}} onClick={() => this.reloadMovies()}>
-                    <h1 style={{color: "white"}} >Showvies</h1>
+                    <h1>Showvies</h1>
                 </div>
                 <div className="ui middle aligned center aligned grid">
                     <div>

@@ -20,6 +20,17 @@ export const fetchMovies = (count, skip) => async dispatch => {
     });
 };
 
+/***
+ * Fetch data for single movie item
+ */
+export const fetchMovie = id => async dispatch => {
+    const response = await api.get(`/flix?id=${id}`);
+    dispatch({
+        type: actionTypes.FETCH_MOVIE,
+        payload: response.data
+    });
+};
+
 /**
  * Fetch a list of all available genres
  */

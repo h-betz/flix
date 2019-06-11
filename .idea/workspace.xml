@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2391880-06c7-4246-bb61-eaf0aa90534d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/flix/src/components/movies/MovieBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/flix/src/components/movies/MovieBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/flix/src/actions/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flix/src/components/movies/MovieItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/flix/src/components/movies/MovieItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flix_api/aggregation/db_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix_api/aggregation/db_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/src/components/movies/MoviePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/flix/src/components/movies/MoviePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix/src/reducers/MovieReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/flix/src/reducers/MovieReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix_api/showvies/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix_api/showvies/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flix_api/showvies/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/flix_api/showvies/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flix_api/flix_api/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="195">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#309#336#0" expanded="true" />
@@ -63,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flix_api/showvies/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="62" />
+            <state relative-caret-position="75">
+              <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="62" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -187,6 +190,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -297,6 +301,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/flix_api/flix_api/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#309#336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flix_api/flix_api/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flix_api/showvies/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_setup.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/flix_api/aggregation/aggregators/netflix.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -310,32 +340,6 @@
           <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="61" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flix_api/flix_api/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#309#336#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flix_api/flix_api/urls.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flix_api/showvies/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_setup.sh">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/api_setup.sh">
       <provider selected="true" editor-type-id="text-editor">

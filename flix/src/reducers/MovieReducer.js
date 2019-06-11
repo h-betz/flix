@@ -1,4 +1,4 @@
-import {FETCH_MOVIES, SEARCH, FETCH_GENRES} from '../actions/types';
+import {FETCH_MOVIES, SEARCH, FETCH_GENRES, FETCH_MOVIE} from '../actions/types';
 import _ from 'lodash';
 
 /**
@@ -12,6 +12,8 @@ export default (state={'movies': [], 'genres': []}, action) => {
             }
         case SEARCH:
             return {..._.mapKeys(action.payload, 'id')};
+        case FETCH_MOVIE:
+            return { ...state, [action.payload.id]: action.payload };
         default:
             return state;
     }

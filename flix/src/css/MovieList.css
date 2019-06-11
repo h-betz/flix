@@ -12,6 +12,10 @@ td {
     color: #0E6EB8;
 }
 
+h1 {
+    color: white;
+}
+
 .ui.inverted.table th {
     color: #0E6EB8 !important;
 }
