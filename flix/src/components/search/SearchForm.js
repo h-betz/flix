@@ -3,6 +3,10 @@ import { Field, reduxForm } from 'redux-form';
 
 class SearchForm extends React.Component {
 
+    /**
+     * Return an error message if the conditions exist for it
+     * @param {error, touched} param0 
+     */
     renderError({error, touched}) {
         if (touched && error) {
             return (
@@ -45,6 +49,9 @@ class SearchForm extends React.Component {
         );
     }
 
+    /**
+     * Render the list of genres
+     */
     renderGenres() {
         return this.props.genres.map((genre) => {
             return (
@@ -53,6 +60,9 @@ class SearchForm extends React.Component {
         });
     }
 
+    /**
+     * Handle form submission
+     */
     onSubmit = formValues => {
         this.props.onSubmit(formValues);
     }
@@ -61,7 +71,6 @@ class SearchForm extends React.Component {
         return (
             <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <div className="equal width fields">
-                    {/* <div className="grouped fields"> */}
                     <div className="field">
                         <label style={{color: "white"}}>Title</label>
                         <Field name="title" component={this.renderInput} label="Title"/>
@@ -69,33 +78,31 @@ class SearchForm extends React.Component {
                 </div>
                 <div className="inline fields">
                     <label style={{color: "white"}}>Provider</label>
-                    <Field name="provider" component={this.renderCheckbox} label="Netflix" />
-                    <Field name="provider" component={this.renderCheckbox} label="Hulu" />
-                    <Field name="provider" component={this.renderCheckbox} label="HBO" />
-                    <Field name="provider" component={this.renderCheckbox} label="Amazon Prime" />
+                    <Field name="netflix" component={this.renderCheckbox} label="Netflix" />
+                    <Field name="hulu" component={this.renderCheckbox} label="Hulu" />
+                    <Field name="hbo" component={this.renderCheckbox} label="HBO" />
+                    <Field name="amazon" component={this.renderCheckbox} label="Amazon Prime" />
                 </div>
                 <div className="field">
                     <label style={{color: "white"}}>Genre</label>
                         <Field name="genre" component="select" label="genre">
                             <option value="" className="text">Select One</option>
                             {this.renderGenres()}
-                            {/* <option value="Action" className="text">Action</option>
-                            <option value="Adventure" className="text">Adventure</option>
-                            <option value="Comedy" className="text">Comedy</option>
-                            <option value="Drama" className="text">Drama</option>
-                            <option value="Horror" className="text">Horror</option> */}
                         </Field>
                 </div>
                 <div className="field" style={{marginLeft: '10px'}}>
                     <button className="ui button primary">Submit</button>
                 </div>
-                    {/* </div> */}
             </form>
         );
     }
 
 }
 
+/**
+ * Validate user inputs
+ * @param {user inputs} formValues 
+ */
 const validate = (formValues) => {
     const errors = {};
     if (!formValues.title) {

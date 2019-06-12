@@ -54,11 +54,11 @@ class MovieItem extends React.Component {
                         <img ref={this.imageRef} alt={title} src={thumbnail_url} className="middle aligned" width="51px" height="76px"/>
                     </td>
                 </Link>
-                <td>
-                    <Link to={`/flix/${this.props.movie.id}`}>
+                <Link to={`/flix/${this.props.movie.id}`}>
+                    <td>
                         {title}
-                    </Link>
-                </td>
+                    </td>
+                </Link>
                 <td>
                     {imdb_rating}               
                 </td>

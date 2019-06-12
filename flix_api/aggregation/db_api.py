@@ -37,11 +37,7 @@ def query_by_genre(genre):
 					WHERE id IN (\
 						SELECT media_id \
 						FROM showvies_mediagenre\
-						WHERE genre_id IN (\
-							SELECT genre_id\
-							FROM showvies_genre\
-							WHERE name = %s\
-						)\
+						WHERE genre_id = %s\
 					);'
 		cursor.execute(query, (genre,))
 		return cursor.fetchall()

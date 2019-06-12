@@ -3,9 +3,13 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
 from aggregation import db_api, format_data
+from utils import parse_post_data
 import json
 
 # Create your views here.
+"""
+Endpoint for handling scrolling/loading on home page
+"""
 @api_view(['GET', 'POST', 'OPTIONS'])
 @csrf_exempt
 def fetch(request, count=50, skip=0):
@@ -16,13 +20,18 @@ def fetch(request, count=50, skip=0):
     return Response(media)
 
 
+"""
+Endpoint for handling search
+"""
 @api_view(['POST', 'OPTIONS'])
 @csrf_exempt
 def search(request):
     data = request.body.decode("utf-8")
     json_data = json.loads(data)
-    title = json_data.get('title')
-    provider = json_data.get('provider')
+    post_data = parse_post_data(json_data)
+    title = post_data.get('title')
+    provider = post_data.get('providers')
+    genre = post_data.get('genre')
     results = []
     if title and provider:
         # TODO add support
@@ -30,9 +39,14 @@ def search(request):
     elif title:
         raw_results = db_api.query_by_title(title)
         results = format_data.format_media_results(raw_results)
+    elif provider:
+        pass
     return Response(results)
 
 
+"""
+End point for returning a list of genres
+"""
 @api_view(['GET', 'OPTIONS'])
 @csrf_exempt
 def genres(request):
@@ -41,12 +55,13 @@ def genres(request):
     return Response(genres)
 
 
+"""
+Endpoint for the movie page
+"""
 @api_view(['GET', 'OPTIONS'])
 @csrf_exempt
 def flix(request):
     data = request.body.decode("utf-8")
-    # json_data = json.loads(data)
-    # media_id = json_data.get('id')
     media_id = request.GET.get('id')
     raw_result = db_api.query_by_id(media_id)
     if not raw_result:
