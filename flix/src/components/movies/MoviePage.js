@@ -63,7 +63,7 @@ class MoviePage extends React.Component {
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        movie: state.movies[ownProps.match.params.id]
+        movie: state.movies[ownProps.match.params.id - 1]
     };
 };
 

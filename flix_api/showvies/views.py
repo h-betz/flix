@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
 from aggregation import db_api, format_data
-from utils import parse_post_data
+from showvies.utils import parse_post_data
 import json
 
 # Create your views here.
@@ -18,6 +18,16 @@ def fetch(request, count=50, skip=0):
     raw_media = db_api.query_by_count(count, skip)
     media = format_data.format_media_results(raw_media)
     return Response(media)
+
+"""
+Endpoint for returning a list of genres
+"""
+@api_view(['GET', 'POST', 'OPTIONS'])
+@csrf_exempt
+def genres(request):
+    raw_genres = db_api.get_generes()
+    genres = format_data.format_genre_results(raw_genres)
+    return Response(genres)
 
 
 """
@@ -42,17 +52,6 @@ def search(request):
     elif provider:
         pass
     return Response(results)
-
-
-"""
-End point for returning a list of genres
-"""
-@api_view(['GET', 'OPTIONS'])
-@csrf_exempt
-def genres(request):
-    raw_genres = db_api.get_generes()
-    genres = format_data.format_genre_results(raw_genres)
-    return Response(genres)
 
 
 """

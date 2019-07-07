@@ -42,9 +42,9 @@ class Aggregator(aggregator.Aggregator):
             'year_end': '2019',
             'year_start': '1900',
         }
-        for i in range(5):
+        for i in range(10):
             params['skip'] = skip
             media_req = self.get(base_url, params=params)
-            skip += 50
+            skip += 100
             for media in media_req.json():
                 yield self.parse(media)

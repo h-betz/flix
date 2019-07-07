@@ -36,7 +36,6 @@ export const fetchMovie = id => async dispatch => {
  */
 export const fetchGenres = () => async dispatch => {
     const response = await api.get('/genres');
-    console.log('Fetch genres');
     dispatch({
         type: actionTypes.FETCH_GENRES,
         payload: response.data

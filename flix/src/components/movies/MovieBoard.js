@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import '../../css/MovieList.css';
 import MovieItem from './MovieItem';
-import MoviePage from './MoviePage';
 import SearchForm from '../search/SearchForm'
 import { onMovieSelect, fetchMovies, searchMovies, fetchGenres } from '../../actions';
 
@@ -31,15 +30,6 @@ class MovieBoard extends React.Component {
     }
 
     /**
-     * Go to movie details page for the selected movie
-     */
-    onClick = movie => {
-        return (
-            <MoviePage movie={movie} />
-        )
-    }
-
-    /**
      * Render the table rows for the movie items
      */
     renderList() {
@@ -47,9 +37,10 @@ class MovieBoard extends React.Component {
         if (!media || media.length === 0) {
             return <tr></tr>;
         }
+        //  onClick={() => this.props.onMovieSelect(movie.id)}
         return this.props.movies.map((movie) => {
             return (
-                <MovieItem movie={movie} onClick={() => this.props.onMovieSelect(movie.id)} key={movie.id} />
+                <MovieItem movie={movie} key={movie.id} />
             );
         });
     }

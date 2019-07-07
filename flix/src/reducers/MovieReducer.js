@@ -4,7 +4,7 @@ import _ from 'lodash';
 /**
  * Handle our movie store
  */
-export default (state={'movies': [], 'genres': []}, action) => {
+export default (state={'movies': [], 'genres': {}}, action) => {
     switch (action.type) {
         case FETCH_MOVIES:
             return {

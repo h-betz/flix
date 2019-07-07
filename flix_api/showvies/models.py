@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Media(models.Model):
-    title = models.CharField(max_length=90)
+    title = models.TextField()
     imdb_rating = models.DecimalField(max_digits=5, decimal_places=2, null=True)
     rt_rating = models.IntegerField(null=True)
     description = models.TextField()

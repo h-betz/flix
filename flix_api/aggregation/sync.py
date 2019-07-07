@@ -21,8 +21,8 @@ def aggregate():
     Start aggregation processes for all of our aggregators
     :return:
     """
-    # aggregators = [netflix, hbo, hulu, amazon_prime]
-    aggregators = [netflix]
+    aggregators = [netflix, hbo, hulu, amazon_prime]
+    # aggregators = [netflix]
     threads = []
     for aggregator in aggregators:
         agg = aggregator.Aggregator()

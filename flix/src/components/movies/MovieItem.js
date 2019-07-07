@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { onMovieSelect } from '../../actions';
+import { connect } from 'react-redux';
+import MoviePage from './MoviePage';
+import { fetchMovie } from '../../actions';
 
 class MovieItem extends React.Component {
 
@@ -44,6 +46,9 @@ class MovieItem extends React.Component {
     }
 
     render() {
+        if (!this.props.movie) {
+            return <tr></tr>
+        }
         const {title, thumbnail_url, imdb_rating, rt_rating} = this.props.movie;
         let providers = this.formatProviders(this.props.movie.providers);
         let genres = this.formatGenres(this.props.movie.genres);
@@ -54,11 +59,9 @@ class MovieItem extends React.Component {
                         <img ref={this.imageRef} alt={title} src={thumbnail_url} className="middle aligned" width="51px" height="76px"/>
                     </td>
                 </Link>
-                <Link to={`/flix/${this.props.movie.id}`}>
-                    <td>
-                        {title}
-                    </td>
-                </Link>
+                <td>
+                    {title}
+                </td>
                 <td>
                     {imdb_rating}               
                 </td>
@@ -77,4 +80,10 @@ class MovieItem extends React.Component {
 
 }
 
-export default MovieItem;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        movie: ownProps.movie,
+    };
+};
+
+export default connect(mapStateToProps, {fetchMovie})(MovieItem);
